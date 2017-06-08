@@ -5,16 +5,17 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 //Routing
-import {Router, browserHistory } from 'react-router';
-import routes from './routes';
+import { BrowserRouter } from 'react-router-dom'
+//Components
+import App from './components/layout/App';
 
 const store = configureStore();
 
 ReactDOM.render(
     <Provider store={store} >
-        <div>
-            hi
-        </div>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
     </Provider>,
   document.getElementById('root')
 );

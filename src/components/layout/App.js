@@ -3,7 +3,7 @@ import React from 'react';
 //Routing
 import { Switch, Route } from 'react-router-dom'
 //Component
-import Search from '../../containers/Search';
+import Search from '../../containers/SearchScreen';
 
 const App = () => (
     <main>

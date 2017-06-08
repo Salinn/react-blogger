@@ -8,6 +8,8 @@ import configureStore from './store/configureStore';
 import { BrowserRouter } from 'react-router-dom'
 //Components
 import App from './components/layout/App';
+//Styling
+import 'bootstrap/dist/css/bootstrap.css';
 
 const store = configureStore();
 

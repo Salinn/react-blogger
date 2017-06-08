@@ -4,7 +4,7 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 //Components
 import App from './components/layout/App';
-import Search from './containers/Search';
+import Search from './containers/SearchScreen';
 
 export default (
     <Route path="/" component={ App }>

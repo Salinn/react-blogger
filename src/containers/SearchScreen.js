@@ -6,22 +6,21 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as searchActions from '../actions/searchActions';
 //Components
+import Search from '../components/search/Search';
 
-class Search extends Component {
+class SearchScreen extends Component {
     constructor(props) {
         super(props);
     }
 
     render() {
         return (
-            <div>
-                Search Screen
-            </div>
+           <Search />
         );
     }
 }
 
-Search.propTypes = {
+SearchScreen.propTypes = {
     search: object,
 };
 
@@ -37,4 +36,4 @@ function MapDispatchToProps(dispatch) {
     };
 }
 
-export default connect(mapStateToProps, MapDispatchToProps)(Search)
+export default connect(mapStateToProps, MapDispatchToProps)(SearchScreen)

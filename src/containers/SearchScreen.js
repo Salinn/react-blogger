@@ -1,6 +1,6 @@
 //React
 import React, {Component} from 'react';
-import {object} from 'prop-types';
+import { object, func, } from 'prop-types';
 //Redux
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -37,6 +37,8 @@ class SearchScreen extends Component {
 
 SearchScreen.propTypes = {
     search: object,
+    inputValueChanged: func,
+    handleOnClick: func,
 };
 
 function mapStateToProps (state) {

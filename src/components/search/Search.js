@@ -1,6 +1,6 @@
 //React
 import React from 'react';
-import {} from 'prop-types';
+import { object, func } from 'prop-types';
 //Components
 import TextInput from '../common/TextInput';
 //Styling
@@ -23,6 +23,10 @@ const Search = ( { search, inputValueChanged, onClick } ) => {
     );
 };
 
-Search.propTypes = {};
+Search.propTypes = {
+    search: object,
+    inputValueChanged: func,
+    onClick: func,
+};
 
 export default Search

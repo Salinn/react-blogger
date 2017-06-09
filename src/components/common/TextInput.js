@@ -1,6 +1,6 @@
 //React
 import React from 'react';
-import {} from 'prop-types';
+import { object, func } from 'prop-types';
 //Components
 
 //Styling
@@ -29,6 +29,9 @@ const TextInput = ( { fieldInfo, inputValueChanged } ) => {
     );
 };
 
-TextInput.propTypes = {};
+TextInput.propTypes = {
+    fieldInfo: object,
+    inputValueChanged: func,
+};
 
 export default TextInput

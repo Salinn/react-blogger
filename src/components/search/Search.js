@@ -6,7 +6,7 @@ import TextInput from '../common/TextInput';
 //Styling
 import { Button, Form, FormGroup, Col, } from 'reactstrap';
 
-const Search = ( { search, inputValueChanged } ) => {
+const Search = ( { search, inputValueChanged, onClick } ) => {
     return (
         <Form noValidate={true}>
             { search.textInputFields.map ( field => {
@@ -16,7 +16,7 @@ const Search = ( { search, inputValueChanged } ) => {
 
             <FormGroup check row>
                 <Col sm={{ size: 10, offset: 2 }}>
-                    <Button>Submit</Button>
+                    <Button onClick={onClick}>Submit</Button>
                 </Col>
             </FormGroup>
         </Form>

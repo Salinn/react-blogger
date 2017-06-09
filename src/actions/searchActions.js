@@ -46,6 +46,23 @@ export const inputValueChanged = ( { name, value, required, pattern } ) => dispa
     dispatch( inputValueUpdated( { name, value, isError, errorMessage } ) );
 };
 
+//SUBMIT EMAIL AND PASSWORD
+const submittedUserInfo = ( { userInfo } ) => {
+    return { type: types.SUBMITTED_USER_INFO, userInfo }
+};
+
+export const submitUserInfo = ( { fieldInfo } ) => dispatch => {
+    const userInfo = [];
+    for(let key in fieldInfo) {
+        if (fieldInfo.hasOwnProperty(key)) {
+            console.log(key);
+            userInfo.push( { name: key, value: fieldInfo[key].value } );
+        }
+    }
+    console.log(userInfo);
+    dispatch(submittedUserInfo( { userInfo } ))
+};
+
 //INITIALIZING FIELDS
 export const initializeFields = ( { textInputFields } ) => {
     let fields = {};

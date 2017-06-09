@@ -16,6 +16,7 @@ const TextInput = ( { fieldInfo, inputValueChanged } ) => {
                            name={fieldInfo.name}
                            type={fieldInfo.type}
                            placeholder={fieldInfo.placeholder}
+                           value={fieldInfo.value}
                            onChange={inputValueChanged}
                            required={fieldInfo.required}
                            pattern={fieldInfo.pattern}

@@ -13,6 +13,7 @@ class SearchScreen extends Component {
         super(props);
 
         this.inputValueChanged = this.inputValueChanged.bind(this);
+        this.handleOnClick = this.handleOnClick.bind(this);
     }
 
     inputValueChanged(event) {
@@ -20,11 +21,16 @@ class SearchScreen extends Component {
         this.props.actions.inputValueChanged(eventValues);
     }
 
+    handleOnClick() {
+        console.log(this.props.search.fields);
+        this.props.actions.submitUserInfo( { fieldInfo: this.props.search.fields } );
+    }
+
     render() {
         const { search } = this.props;
 
         return (
-           <Search search={search} inputValueChanged={this.inputValueChanged} />
+           <Search search={search} inputValueChanged={this.inputValueChanged} onClick={this.handleOnClick} />
         );
     }
 }

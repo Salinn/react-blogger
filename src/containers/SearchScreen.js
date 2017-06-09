@@ -16,13 +16,15 @@ class SearchScreen extends Component {
     }
 
     inputValueChanged(event) {
-        const eventValues = {value: event.target.value, name: event.target.name};
+        const eventValues = {value: event.target.value, name: event.target.name, required: event.target.required, pattern: event.target.pattern};
         this.props.actions.inputValueChanged(eventValues);
     }
 
     render() {
+        const { search } = this.props;
+
         return (
-           <Search inputValueChanged={this.inputValueChanged} />
+           <Search fields={search.fields} inputValueChanged={this.inputValueChanged} />
         );
     }
 }

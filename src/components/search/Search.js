@@ -2,35 +2,20 @@
 import React from 'react';
 import {} from 'prop-types';
 //Components
-
+import TextInput from '../common/TextInput';
 //Styling
-import { Button, Form, FormGroup, Label, Input, Col } from 'reactstrap';
+import { Button, Form, FormGroup, Col, } from 'reactstrap';
 
-const Search = ( { inputValueChanged } ) => {
+const Search = ( { fields, inputValueChanged } ) => {
+    const isError = fields.email !== undefined ? fields.email.isError : false;
+    const errorMessage = fields.email !== undefined ? fields.email.errorMessage : '';
+    const emailInfo = { id: '1', label: 'Email', name: 'email', type: 'email',  placeholder: 'johnSmith@gmail.com',
+          isError: isError, errorMessage: errorMessage, required: true,
+          pattern: "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"};
     return (
         <Form>
-            <FormGroup row>
-                <Label for="exampleEmail" sm={2}>Email</Label>
-                <Col sm={10}>
-                    <Input type="email"
-                           name="email"
-                           id="exampleEmail"
-                           placeholder="with a placeholder"
-                           onChange={inputValueChanged}
-                    />
-                </Col>
-            </FormGroup>
-            <FormGroup row>
-                <Label for="examplePassword" sm={2}>Password</Label>
-                <Col sm={10}>
-                    <Input type="password"
-                           name="password"
-                           id="examplePassword"
-                           placeholder="password placeholder"
-                           onChange={inputValueChanged}
-                    />
-                </Col>
-            </FormGroup>
+            <TextInput fieldInfo={ emailInfo } inputValueChanged={inputValueChanged} />
+
             <FormGroup check row>
                 <Col sm={{ size: 10, offset: 2 }}>
                     <Button>Submit</Button>

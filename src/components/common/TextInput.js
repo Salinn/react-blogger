@@ -4,7 +4,7 @@ import {} from 'prop-types';
 //Components
 
 //Styling
-import { FormGroup, Label, Input, Col, Popover, PopoverTitle, PopoverContent } from 'reactstrap';
+import { FormGroup, Label, Input, Col, } from 'reactstrap';
 
 const TextInput = ( { fieldInfo, inputValueChanged } ) => {
     return (
@@ -20,12 +20,9 @@ const TextInput = ( { fieldInfo, inputValueChanged } ) => {
                            required={fieldInfo.required}
                            pattern={fieldInfo.pattern}
                     />
+                    {fieldInfo.isError ? <p>{fieldInfo.errorMessage}</p> : null}
                 </Col>
             </FormGroup>
-            <Popover placement='right' isOpen={fieldInfo.isError} target={fieldInfo.id} >
-                <PopoverTitle>Error!</PopoverTitle>
-                <PopoverContent>{fieldInfo.errorMessage}</PopoverContent>
-            </Popover>
         </div>
 
     );

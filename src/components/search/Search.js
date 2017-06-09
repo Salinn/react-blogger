@@ -11,7 +11,7 @@ const Search = ( { search, inputValueChanged } ) => {
         <Form>
             { search.textInputFields.map ( field => {
                 let fieldInfo = {...field, ...search.fields[field.name]};
-                return ( <TextInput fieldInfo={ fieldInfo } inputValueChanged={inputValueChanged} /> );
+                return ( <TextInput key={field.name} fieldInfo={ fieldInfo } inputValueChanged={inputValueChanged} /> );
             })}
 
             <FormGroup check row>

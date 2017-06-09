@@ -11,11 +11,18 @@ import Search from '../components/search/Search';
 class SearchScreen extends Component {
     constructor(props) {
         super(props);
+
+        this.inputValueChanged = this.inputValueChanged.bind(this);
+    }
+
+    inputValueChanged(event) {
+        const eventValues = {value: event.target.value, name: event.target.name};
+        this.props.actions.inputValueChanged(eventValues);
     }
 
     render() {
         return (
-           <Search />
+           <Search inputValueChanged={this.inputValueChanged} />
         );
     }
 }

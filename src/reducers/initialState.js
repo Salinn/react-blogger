@@ -1,3 +1,6 @@
 export default {
-    search: {},
+    search: {
+        meta: {},
+        fields: {}
+    },
 }

@@ -2,14 +2,11 @@
 import * as types from '../actions/actionTypes';
 //Initial Data
 import initialState from './initialState';
-export default function searchReducer(state = initialState, action) {
+export default function searchReducer(state = initialState.search, action) {
     switch (action.type) {
-        case types.INPUT_VALUE_CHANGE_STARTED:
-            return { ...state };
-        case types.INPUT_VALUE_CHANGE_SUCCESS:
-            return { ...state };
-        case types.INPUT_VALUE_CHANGE_FAILED:
-            return { ...state };
+        case types.INPUT_VALUE_UPDATED:
+            const updatedInfo = {value: action.value, isError: action.isError, errorMessage: action.errorMessage};
+            return { ...state, fields: {...state.fields, [action.name]:  updatedInfo} };
         default:
             return { ...state };
     }

@@ -6,15 +6,13 @@ import TextInput from '../common/TextInput';
 //Styling
 import { Button, Form, FormGroup, Col, } from 'reactstrap';
 
-const Search = ( { fields, inputValueChanged } ) => {
-    const isError = fields.email !== undefined ? fields.email.isError : false;
-    const errorMessage = fields.email !== undefined ? fields.email.errorMessage : '';
-    const emailInfo = { id: '1', label: 'Email', name: 'email', type: 'email',  placeholder: 'johnSmith@gmail.com',
-          isError: isError, errorMessage: errorMessage, required: true,
-          pattern: "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"};
+const Search = ( { search, inputValueChanged } ) => {
     return (
         <Form>
-            <TextInput fieldInfo={ emailInfo } inputValueChanged={inputValueChanged} />
+            { search.textInputFields.map ( field => {
+                let fieldInfo = {...field, ...search.fields[field.name]};
+                return ( <TextInput fieldInfo={ fieldInfo } inputValueChanged={inputValueChanged} /> );
+            })}
 
             <FormGroup check row>
                 <Col sm={{ size: 10, offset: 2 }}>

@@ -24,7 +24,7 @@ class SearchScreen extends Component {
         const { search } = this.props;
 
         return (
-           <Search fields={search.fields} inputValueChanged={this.inputValueChanged} />
+           <Search search={search} inputValueChanged={this.inputValueChanged} />
         );
     }
 }

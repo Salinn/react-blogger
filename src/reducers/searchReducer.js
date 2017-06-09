@@ -7,6 +7,8 @@ export default function searchReducer(state = initialState.search, action) {
         case types.INPUT_VALUE_UPDATED:
             const updatedInfo = {value: action.value, isError: action.isError, errorMessage: action.errorMessage};
             return { ...state, fields: {...state.fields, [action.name]:  updatedInfo} };
+        case types.INITIALIZE_FIELDS:
+            return { ...state, fields: action.fields };
         default:
             return { ...state };
     }

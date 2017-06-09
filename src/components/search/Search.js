@@ -8,7 +8,7 @@ import { Button, Form, FormGroup, Col, } from 'reactstrap';
 
 const Search = ( { search, inputValueChanged } ) => {
     return (
-        <Form>
+        <Form noValidate={true}>
             { search.textInputFields.map ( field => {
                 let fieldInfo = {...field, ...search.fields[field.name]};
                 return ( <TextInput key={field.name} fieldInfo={ fieldInfo } inputValueChanged={inputValueChanged} /> );

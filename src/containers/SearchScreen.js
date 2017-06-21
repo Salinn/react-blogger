@@ -37,8 +37,6 @@ class SearchScreen extends Component {
 
 SearchScreen.propTypes = {
     search: object,
-    inputValueChanged: func,
-    handleOnClick: func,
 };
 
 function mapStateToProps (state) {

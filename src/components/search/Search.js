@@ -2,7 +2,7 @@
 import React from 'react';
 import { object, func } from 'prop-types';
 //Components
-import TextInput from '../common/TextInput';
+import InputMapper from '../common/InputMapper';
 //Styling
 import { Button, Form, FormGroup, Col, } from 'reactstrap';
 
@@ -11,7 +11,7 @@ const Search = ( { search, inputValueChanged, onClick } ) => {
         <Form noValidate={true}>
             { search.textInputFields.map ( field => {
                 let fieldInfo = {...field, ...search.fields[field.name]};
-                return ( <TextInput key={field.name} fieldInfo={ fieldInfo } inputValueChanged={inputValueChanged} /> );
+                return ( <InputMapper key={field.name} fieldInfo={ fieldInfo } inputValueChanged={inputValueChanged} /> );
             })}
 
             <FormGroup check row>

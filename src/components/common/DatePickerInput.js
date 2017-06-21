@@ -2,7 +2,6 @@
 import React from 'react';
 import { object, func } from 'prop-types';
 //Components
-
 //Styling
 import { FormGroup, Label, Input, Col, FormFeedback, } from 'reactstrap';
 
@@ -13,10 +12,9 @@ const TextInput = ( { fieldInfo, inputValueChanged } ) => {
             <Col sm={4}>
                 <Input id={fieldInfo.id}
                        name={fieldInfo.name}
-                       type="text"
-                       placeholder={fieldInfo.placeholder}
+                       type="date"
                        value={fieldInfo.value}
-                       onChange={inputValueChanged}
+                       onKeyPress={inputValueChanged}
                        required={fieldInfo.required}
                        pattern={fieldInfo.pattern}
                        state={fieldInfo.isError ? 'danger' : null}

@@ -2,9 +2,11 @@
 import { combineReducers } from 'redux';
 //Reducers
 import search from './searchReducer';
+import table from './tableReducer';
 
 const rootReducer = combineReducers({
-    search
+    search,
+    table
 });
 
 export default rootReducer;

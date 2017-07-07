@@ -12,7 +12,7 @@ const TextInput = ( { fieldInfo, inputValueChanged } ) => {
             <Col sm={4}>
                 <Input id={fieldInfo.id}
                        name={fieldInfo.name}
-                       type="date"
+                       type="password"
                        value={fieldInfo.value}
                        onKeyPress={inputValueChanged}
                        required={fieldInfo.required}

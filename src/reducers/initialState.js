@@ -22,5 +22,13 @@ export default {
             { id: 3, name: 'birthday', label: 'Birthday', type: types.DATEPICKER, placeholder: '', required: false, pattern: patterns.NONE },
         ]
     },
+    table: {
+        columns: [
+            { label: 'Name', dataName: 'name', inUse: true },
+            { label: 'Age', dataName: 'name', inUse: true },
+            { label: 'Friend Name', dataName: 'friendName', inUse: false },
+            { label: 'Friend Age', dataName: 'friendAge', inUse: false },
+        ]
+    }
 }
 
